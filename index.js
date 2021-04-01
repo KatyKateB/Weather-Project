@@ -65,7 +65,7 @@ function search(event) {
 
 let apiKey = "ab16c38b122d10abe8b3cbd5ce9558c2";
 let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-let unit = "metric";
+let unit = "imperial";
 let apiUrl = `${apiEndpoint}?q=${searchCityInput.value}&appid=${apiKey}&units=${unit}`;
 axios.get(apiUrl).then(showTemp);
 }
@@ -73,7 +73,7 @@ axios.get(apiUrl).then(showTemp);
 function searchLocation(position) {
 let apiKey = "ab16c38b122d10abe8b3cbd5ce9558c2";
 let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-let unit = "metric";
+let unit = "imperial";
 let lat = "position.coords.latitude";
 let lon = "position.coords.longitude";
 let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
@@ -94,5 +94,4 @@ console.log(searchForm);
 let currentLocationButton = document.querySelector("#city-input");
 currentLocationButton.addEventListener("submit", searchLocation);
 console.log(currentLocationButton);
-
 
