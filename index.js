@@ -94,4 +94,3 @@ console.log(searchForm);
 let currentLocationButton = document.querySelector("#city-input");
 currentLocationButton.addEventListener("submit", searchLocation);
 console.log(currentLocationButton);
-

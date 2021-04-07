@@ -39,23 +39,22 @@ list-style: none;
     padding: 20px;
 }
 
-.weather-icon {
-    height: 64px;
-    width: 64px;
-    margin-right: 10px;
-}
 
-.temperature {
+.temperature strong {
     color: rgb(33, 33, 33);
     font-size: 64px;
     font-weight: 400;
     line-height: 1;
+    vertical-align: bottom;
 }
 
-.units {
-    position: relative;
-    top: -34px;
-    cursor: pointer;
+.temperature .units {
+   vertical-align: top;
+   cursor: pointer;
+   position: relative;
+   font-size: 16px;
+   color: blue;
+   
 }
 
 .github-link {
