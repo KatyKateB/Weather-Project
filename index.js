@@ -43,7 +43,7 @@ function showTemp(response) {
   degree.innerHTML = `${temp}`;
 
   let description = document.querySelector("#conditions");
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
     
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
