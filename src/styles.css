@@ -39,6 +39,12 @@ list-style: none;
     padding: 20px;
 }
 
+.weather-icon {
+    height: 64px;
+    width: 64px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
 
 .temperature strong {
     color: rgb(33, 33, 33);
@@ -53,7 +59,7 @@ list-style: none;
    cursor: pointer;
    position: relative;
    font-size: 16px;
-   color: blue;
+
    
 }
 
