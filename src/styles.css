@@ -79,13 +79,7 @@ text-transform: capitalize;
     text-decoration: none;
 }
 
-.temperature .units .inactive  {
-    text-decoration: none;
-}
 
-.temperature .units .inactive:hoover  {
-    text-decoration: none;
-}
 
 .github-link {
     text-align: center;

@@ -43,7 +43,7 @@ let year = now.getFullYear();
 currentDate.innerHTML = `${day}  ${hours}:${minutes}`;
 
 function showTemp(response) {
-  console.log(response.data);
+  //console.log(response.data);
   let temp = Math.round(response.data.main.temp);
   let degree = document.querySelector("#temperature");
   degree.innerHTML = `${temp}`;
@@ -119,11 +119,11 @@ let fahrenheitTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
-console.log(searchForm);
+//console.log(searchForm);
 
 let currentLocationButton = document.querySelector("#city-input");
 currentLocationButton.addEventListener("submit", searchLocation);
-console.log(currentLocationButton);
+//console.log(currentLocationButton);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
