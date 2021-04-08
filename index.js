@@ -47,6 +47,8 @@ function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let degree = document.querySelector("#temperature");
   degree.innerHTML = `${temp}`;
+  
+  fahrenheitTemperature = response.data.main.temp;
 
   let description = document.querySelector("#conditions");
   description.innerHTML = response.data.weather[0].description;
@@ -96,6 +98,21 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 
 }
 
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let celsiusTemperature = (fahrenheitTemperature - 32) * (5/9);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitTemperature = null;
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 console.log(searchForm);
@@ -103,3 +120,9 @@ console.log(searchForm);
 let currentLocationButton = document.querySelector("#city-input");
 currentLocationButton.addEventListener("submit", searchLocation);
 console.log(currentLocationButton);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
