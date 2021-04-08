@@ -61,6 +61,9 @@ function showTemp(response) {
   let currentyCity = document.querySelector("#city");
   currentyCity.innerHTML = `${city}`;
 
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
+
 }
 
 function search(event) {
