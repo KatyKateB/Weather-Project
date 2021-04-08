@@ -100,14 +100,18 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
-  let celsiusTemperature = (fahrenheitTemperature - 32) * (5/9);
   let temperatureElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let celsiusTemperature = (fahrenheitTemperature - 32) * (5/9);  
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 

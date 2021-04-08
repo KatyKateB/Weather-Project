@@ -47,6 +47,8 @@ text-transform: capitalize;
     vertical-align: bottom;
 }
 
+
+
 .temperature strong {
     color: rgb(33, 33, 33);
     font-size: 64px;
@@ -60,8 +62,29 @@ text-transform: capitalize;
    cursor: pointer;
    position: relative;
    font-size: 16px;
+   text-decoration: none;
 
-   
+      
+}
+
+.temperature .units .active  {
+    color: black;
+    cursor:default;
+    text-decoration: none;
+}
+
+.temperature .units .active:hoover {
+    color: black;
+    cursor:default;
+    text-decoration: none;
+}
+
+.temperature .units .inactive  {
+    text-decoration: none;
+}
+
+.temperature .units .inactive:hoover  {
+    text-decoration: none;
 }
 
 .github-link {
