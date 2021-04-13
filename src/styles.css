@@ -79,7 +79,28 @@ text-transform: capitalize;
     text-decoration: none;
 }
 
+.card-header{
+    text-align: center;
+}
 
+.card-title {
+text-align: center;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.card-text-temp-max {
+font-size: 16px;
+color: #000;
+}
+
+.card-text-temp-min {
+font-size: 16px;
+color: #000;
+opacity: .6;
+}
 
 .github-link {
     text-align: center;
