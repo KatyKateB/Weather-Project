@@ -42,6 +42,49 @@ let year = now.getFullYear();
 
 currentDate.innerHTML = `${day}  ${hours}:${minutes}`;
 
+function displayForecast() {
+let forecastElement = document.querySelector("#forecast");
+
+let days = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
+
+let forecastHTML = `<div class="row">`;
+days.forEach(function (day) {
+forecastHTML = forecastHTML + 
+`<div class="col-2">
+                    <div class="card border-info mb-3" style="max-width: 18rem;">
+                        <div class="card-header">
+                            ${days}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <img 
+                                src="https://openweathermap.org/img/wn/50d@2x.png"
+                                alt=""
+                                width="36"
+                            </h5>
+                            <p class="card-text">
+                                <span class="card-text-temp-max">41°</span>
+                                <span class="card-text-temp-min">20°</span>
+                            </p>
+                        </div>
+                      </div>
+`;
+});
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+console.log(forecastHTML);
+}
+
+
 function showTemp(response) {
   //console.log(response.data);
   let temp = Math.round(response.data.main.temp);
