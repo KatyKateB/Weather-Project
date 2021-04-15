@@ -42,6 +42,8 @@ let year = now.getFullYear();
 
 currentDate.innerHTML = `${day}  ${hours}:${minutes}`;
 
+
+
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);
 let day = date.getDay();
@@ -84,8 +86,6 @@ forecastHTML = forecastHTML +
 forecastHTML = forecastHTML +`</div>`;
 forecastElement.innerHTML = forecastHTML;
 }
-
-
 
 
 function getForecast(coordinates) {
@@ -139,22 +139,6 @@ let apiUrl = `${apiEndpoint}?q=${searchCityInput.value}&appid=${apiKey}&units=${
 axios.get(apiUrl).then(showTemp);
 }
 
-function searchLocation(position) {
-let apiKey = "ab16c38b122d10abe8b3cbd5ce9558c2";
-let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-let unit = "imperial";
-let lat = "position.coords.latitude";
-let lon = "position.coords.longitude";
-let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
-
-axios.get(apiUrl).then(showTemp);
- }
-
-function displayCurrentLocation(event) {
-event.preventDefault();
-navigator.geolocation.getCurrentPosition(searchLocation);
-
-}
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
@@ -189,3 +173,4 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
