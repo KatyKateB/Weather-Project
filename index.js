@@ -42,7 +42,9 @@ let year = now.getFullYear();
 
 currentDate.innerHTML = `${day}  ${hours}:${minutes}`;
 
-function displayForecast() {
+
+function displayForecast(response) {
+  console.log(response.data.daily);
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`; 
@@ -72,7 +74,18 @@ forecastElement.innerHTML = forecastHTML;
 }
 
 
-displayForecast();
+
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ab16c38b122d10abe8b3cbd5ce9558c2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  
+  axios.get(apiUrl).then(displayForecast);
+}
+
+
 
 function showTemp(response) {
   //console.log(response.data);
@@ -98,6 +111,7 @@ function showTemp(response) {
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
 
+  getForecast(response.data.coord);
 }
 
 function search(event) {
