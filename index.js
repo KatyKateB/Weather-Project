@@ -47,7 +47,7 @@ currentDate.innerHTML = `${day}  ${hours}:${minutes}`;
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);
 let day = date.getDay();
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saterday"];
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 return days[day];
 
@@ -60,7 +60,7 @@ let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`; 
 forecast.forEach(function(forecastDay, index) {
-  if (index < 6) {
+ if (index < 6) {
 forecastHTML = forecastHTML + 
 `
 <div class="col-2">
@@ -139,6 +139,22 @@ let apiUrl = `${apiEndpoint}?q=${searchCityInput.value}&appid=${apiKey}&units=${
 axios.get(apiUrl).then(showTemp);
 }
 
+function searchLocation(position) {
+let apiKey = "ab16c38b122d10abe8b3cbd5ce9558c2";
+let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+let unit = "imperial";
+let lat = "position.coords.latitude";
+let lon = "position.coords.longitude";
+let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+
+axios.get(apiUrl).then(showTemp);
+ }
+
+function displayCurrentLocation(event) {
+event.preventDefault();
+navigator.geolocation.getCurrentPosition(searchLocation);
+
+}
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
