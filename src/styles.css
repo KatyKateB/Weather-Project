@@ -29,6 +29,7 @@ height: 19px;
 line-height: 1;
 list-style: none;
 text-transform: capitalize;
+
 }
 
 .weather-app {
@@ -84,6 +85,7 @@ text-transform: capitalize;
 }
 
 .card-header{
+    font-size: 14px;
     text-align: center;
 }
 
